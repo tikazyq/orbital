@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbital.Agent", "Orbital.Agent\Orbital.Agent.csproj", "{17FEAC23-717A-4990-8CD6-76C128E4D70C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbital.API", "Orbital.API\Orbital.API.csproj", "{92043DFC-3AB3-4820-BEC7-9D3688697549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbital.Model", "Orbital.Model\Orbital.Model.csproj", "{3733ECC3-68B4-4DE4-A22D-F32B58E87B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbital.DB", "Orbital.DB\Orbital.DB.csproj", "{69FD6A58-ED8C-44BF-8A41-77E622D4CB17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17FEAC23-717A-4990-8CD6-76C128E4D70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FEAC23-717A-4990-8CD6-76C128E4D70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FEAC23-717A-4990-8CD6-76C128E4D70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FEAC23-717A-4990-8CD6-76C128E4D70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92043DFC-3AB3-4820-BEC7-9D3688697549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92043DFC-3AB3-4820-BEC7-9D3688697549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92043DFC-3AB3-4820-BEC7-9D3688697549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92043DFC-3AB3-4820-BEC7-9D3688697549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3733ECC3-68B4-4DE4-A22D-F32B58E87B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3733ECC3-68B4-4DE4-A22D-F32B58E87B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3733ECC3-68B4-4DE4-A22D-F32B58E87B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3733ECC3-68B4-4DE4-A22D-F32B58E87B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FD6A58-ED8C-44BF-8A41-77E622D4CB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FD6A58-ED8C-44BF-8A41-77E622D4CB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FD6A58-ED8C-44BF-8A41-77E622D4CB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FD6A58-ED8C-44BF-8A41-77E622D4CB17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
