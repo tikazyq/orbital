@@ -7,21 +7,21 @@ namespace Orbital.API.Controllers;
 
 public abstract class BaseController<T> where T : BaseModel
 {
-    private readonly ILogger<BaseController<T>> _logger;
-    private readonly OrbitalDbContext _dbContext;
-    private readonly DbSet<T> _dbSet;
+    protected readonly ILogger<BaseController<T>> Logger;
+    protected readonly OrbitalDbContext DbContext;
+    protected readonly DbSet<T> DbSet;
 
     protected BaseController(ILogger<BaseController<T>> logger, OrbitalDbContext dbContext)
     {
-        _logger = logger;
-        _dbContext = dbContext;
-        _dbSet = _dbContext.Set<T>();
+        Logger = logger;
+        DbContext = dbContext;
+        DbSet = DbContext.Set<T>();
     }
 
     [HttpGet]
     public IEnumerable<T> GetList(int page = 1, int size = 10)
     {
-        return _dbSet
+        return DbSet
             .OrderByDescending(x => x.Id)
             .Skip((page - 1) * size)
             .Take(size)
@@ -31,35 +31,41 @@ public abstract class BaseController<T> where T : BaseModel
     [HttpGet("{id}")]
     public T? Get(string id)
     {
-        return _dbSet.SingleOrDefault(x => x.Id == id);
+        return DbSet.SingleOrDefault(x => x.Id == id);
     }
 
     [HttpPost]
     public T Create(T model)
     {
-        _dbSet.Add(model);
-        _dbContext.SaveChanges();
+        DbSet.Add(model);
+        DbContext.SaveChanges();
         return model;
     }
 
     [HttpPut]
     public T Update(T model)
     {
-        _dbSet.Update(model);
-        _dbContext.SaveChanges();
+        var existingResult = DbSet.SingleOrDefault(x => x.Id == model.Id);
+        if (existingResult == null)
+        {
+            throw new Exception("Not found");
+        }
+
+        DbSet.Update(model);
+        DbContext.SaveChanges();
         return model;
     }
 
     [HttpDelete("{id}")]
     public void Delete(string id)
     {
-        var model = _dbSet.SingleOrDefault(x => x.Id == id);
-        if (model == null)
+        var existingResult = DbSet.SingleOrDefault(x => x.Id == id);
+        if (existingResult == null)
         {
-            return;
+            throw new Exception("Not found");
         }
 
-        _dbSet.Remove(model);
-        _dbContext.SaveChanges();
+        DbSet.Remove(existingResult);
+        DbContext.SaveChanges();
     }
 }
